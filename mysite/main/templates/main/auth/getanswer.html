@@ -1,0 +1,18 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!--Login-->
+<div class="container py-5">
+  <h1>Get Answer</h1>
+  <form method="POST">
+    <h2>{{ question }}</h2>
+    {% csrf_token %}
+    {{ getanswer_form|crispy }}
+    <button class="btn btn-primary" type="submit">Continue</button>
+  </form>
+</div>
+
+{% endblock %}

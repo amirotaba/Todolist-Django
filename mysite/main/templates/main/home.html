@@ -1,0 +1,77 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+<!--Login-->
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/home.css' %}">
+<div class="container py-5">
+  <form method="POST" autocomplete="off" autufocus>
+    <h1 id="new-task">Add new task</h1>
+    {% csrf_token %}
+    {{ addtask_form|crispy }}
+    <button class="btn btn-primary" id="add-task-button"
+     type="submit">Add</button>
+  </form
+</div>
+<div id="div">
+<table id="task-table">
+  <tr>
+    <th id="task-label">Tasks</th>
+    <th id="date-label">Date</th>
+  </tr>
+    {% for row in mainlist %}
+      <tr>
+        {% if row.2 == "Y" %}
+        <td id="checked">{{ row.0 }}
+        <form action="/" method="post" id="delete_form">
+          <button type="submit" id="delete" name="delete" value="{{ row.4 }}">
+            ×</button>
+          <button type="submit" id="check" name="check" value="{{ row.4 }}">
+          </button>
+          {% csrf_token %}
+        </form>
+        </td>
+          {% if row.3 == 0 %}
+            <td class="Date">today</td>
+          {% elif row.3 == 1 %}
+            <td class="Date">yesterday</td>
+          {% else %}
+            <td class="Date">{{ row.3 }} days ago.</td>
+          {% endif %}
+        {% else %}
+          <td id="not_checked">{{ row.0 }}
+          <form action="/" method="post" id="delete_form">
+            <button type="submit" id="delete" name="delete" value="{{ row.4 }}">
+              ×</button>
+            <button type="submit" id="check" name="check" value="{{ row.4 }}">
+            </button>
+            {% csrf_token %}
+          </form>
+          </td>
+          {% if row.3 == 0 %}
+            <td>today</td>
+          {% elif row.3 == 1 %}
+            <td>yesterday</td>
+          {% elif row.3 > 1 and row.3 < 4 %}
+            <td id="day1" class="Date">{{ row.3 }} days ago</td>
+          {% elif row.3 > 3 and row.3 < 8 %}
+            <td id="day3" class="Date">{{ row.3 }} days ago</td>
+          {% elif row.3 > 7 and row.3 < 15 %}
+            <td id="day7" class="Date">{{ row.3 }} days ago</td>
+          {% elif row.3 > 14 and row.3 < 22 %}
+            <td id="day14" class="Date">{{ row.3 }} days ago</td>
+          {% elif row.3 > 21 and row.3 < 32 %}
+            <td id="day21" class="Date">{{ row.3 }} days ago</td>
+          {% elif row.3 > 31 %}
+            <td id="day31" class="Date">{{ row.3 }} days ago</td>
+          {% endif %}
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </table>
+<p id="ps">*To check task just click on it</p>
+</div>
+{% endblock %}

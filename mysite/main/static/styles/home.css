@@ -1,0 +1,181 @@
+body {
+  background-color: darkgray;
+}
+#div {
+  text-align: center;
+}
+form{
+  text-align: center;
+}
+#header{
+  margin-left: auto;
+  margin-right: auto;
+}
+#new-task{
+  color: whitesmoke
+  padding: 15px;
+  font-size: xx-large;
+  text-align: center;
+  border: black;
+  border-radius: 25px;
+  color: black;
+}
+#task-entry{
+  padding: 5px 20px 5px 20px;
+  border: black;
+  border-radius: 25px;
+  align-content: center;
+}
+#task-entry:focus, #task-entry:focus{
+    outline: none;
+}
+#add-task-button{
+  padding: 15px 20px 15px 20px;
+  border: black;
+  border-radius: 25px;
+  text-align: : center;
+}
+#add-task-button:hover{
+  background: darkcyan;
+  color: white;
+}
+#task-table{
+  display: inline-table;
+  text-align: center;
+  background: white;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-radius: 17px;
+  border-style: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: separate;
+  border-spacing: 0 1px;
+  padding-inline-start: 40px;
+  padding-inline-end: 40px;
+  position: relative;
+  top: 20px;
+}
+#task-label{
+  width: 120px;
+  height: 30px;
+  text-align: start;
+  position: relative;
+  left: 20px;
+}
+#date-label{
+  width: 120px;
+  height: 30px;
+  text-align: start;
+  padding-inline-start: 20px;
+}
+#not_checked {
+  text-align: center;
+  border: black;
+  border-radius: 30px;
+  position: relative;
+  right: 20px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#checked {
+  text-align: center;
+  border: black;
+  border-radius: 30px;
+  background: green;
+  color: white;
+  position: relative;
+  right: 20px;
+  text-decoration: line-through;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#not_checked:hover{
+  background-color: dimgray;
+  color: white;
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-radius: 20px;
+  border-style: hidden;
+}
+/* .Date{
+  text-align: start;
+  padding-inline-start: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} */
+#delete{
+  background: white;
+  padding: 3px 12px 3px 12px;
+  border: black;
+  border-radius: 30px;
+  position: relative;
+  bottom: 27px;
+  left: 265px;
+
+}
+#delete:hover {
+  background-color: orangered;
+  color: white;
+}
+#delete_form{
+  width: 1px;
+  height: 1px;
+}
+#check{
+  text-align: center;
+  background: transparent;
+  border-style: hidden;
+  border-radius: 15px;
+  width: 290px;
+  height: 28px;
+  position: relative;
+  bottom: 55px;
+  right: 20px;
+}
+#day1{
+  background: #ffffff;
+  color: black;
+  border: black;
+  border-radius: 25px;
+}
+#day3{
+  background: #ffffc8;
+  color: black;
+  border: black;
+  border-radius: 25px;
+}
+#day7{
+  background: #ffff00;
+  color: black;
+  border: black;
+  border-radius: 25px;
+}
+#day14{
+  background: #ff9600;
+  color: white;
+  border: black;
+  border-radius: 25px;
+}
+#day21{
+  background: #ff6400;
+  color: white;
+  border: black;
+  border-radius: 25px;
+}
+#day31{
+  width: 120px;
+  height: 30px;
+  background: #ff0000;
+  color: white;
+  border: black;
+  border-radius: 25px;
+}
+#ps{
+  position: relative;
+  top: 30px;
+}
